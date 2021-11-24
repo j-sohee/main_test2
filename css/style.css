@@ -1,0 +1,451 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+ul, ol, li {
+  list-style: none; }
+
+a {
+  text-decoration: none; }
+
+.h {
+  position: absolute;
+  top: -9999px;
+  opacity: 0; }
+
+fieldset {
+  border: none; }
+
+#header {
+  width: 100%;
+  border-bottom: 1px solid #ddd;
+  position: relative;
+  z-index: 5; }
+  #header .inner {
+    width: 1180px;
+    height: 135px;
+    margin: 0 auto;
+    position: relative; }
+    #header .inner > h1 {
+      position: absolute;
+      top: 10px;
+      left: 50%;
+      transform: translateX(-50%); }
+      #header .inner > h1 a {
+        font: 26px/1 "Noto Sans", "Noto Sans KR";
+        color: #111; }
+    #header .inner .btnCall {
+      width: 20px;
+      height: 18px;
+      position: absolute;
+      top: 32px;
+      left: 0;
+      transition: 0.5s; }
+      #header .inner .btnCall::before {
+        content: '';
+        display: block;
+        width: 100%;
+        height: 2px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: #555;
+        transition: 0.5s; }
+      #header .inner .btnCall::after {
+        content: '';
+        display: block;
+        width: 100%;
+        height: 2px;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        background: #555;
+        transition: 0.5s; }
+      #header .inner .btnCall span {
+        display: block;
+        width: 100%;
+        height: 2px;
+        background: #555;
+        position: absolute;
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%);
+        text-indent: -9999px;
+        transition: 0.5s; }
+      #header .inner .btnCall.on {
+        z-index: 11; }
+        #header .inner .btnCall.on::before {
+          background: #999;
+          transform: rotate(45deg);
+          top: 50%;
+          margin-top: -1px; }
+        #header .inner .btnCall.on::after {
+          transform: rotate(-45deg);
+          bottom: 50%;
+          margin-bottom: -1px;
+          background: #999; }
+        #header .inner .btnCall.on span {
+          background: #999;
+          transform: translateX(100%);
+          opacity: 0; }
+    #header .inner .util {
+      position: absolute;
+      top: 31px;
+      left: 31px; }
+      #header .inner .util a {
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        margin-right: 5px; }
+        #header .inner .util a img {
+          width: 100%;
+          height: 100%; }
+    #header .inner .menuWeb {
+      width: 100%; }
+      #header .inner .menuWeb #gnb {
+        width: 100%;
+        font-size: 0;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        border-top: 1px solid #ddd; }
+        #header .inner .menuWeb #gnb::after {
+          content: '';
+          display: block;
+          clear: both; }
+        #header .inner .menuWeb #gnb > li {
+          width: 20%;
+          height: 60px;
+          float: left;
+          font-size: 0;
+          transition: 0.5s; }
+          #header .inner .menuWeb #gnb > li > a {
+            display: block;
+            width: 100%;
+            height: 100%;
+            font: 14px/60px "Noto Sans", "Noto Sans KR";
+            color: #555;
+            text-align: center;
+            transition: 0.5s; }
+            #header .inner .menuWeb #gnb > li > a:hover {
+              color: #000; }
+    #header .inner .user {
+      position: absolute;
+      right: 0;
+      top: 35px; }
+      #header .inner .user a {
+        display: inline-block;
+        width: 15px;
+        height: 15px;
+        margin-left: 5px; }
+        #header .inner .user a img {
+          width: 100%;
+          height: 100%; }
+
+#visual {
+  width: 100%;
+  height: calc(100vh - 136px);
+  position: relative;
+  background: #fff; }
+  #visual .inner {
+    width: 1180px;
+    height: 100%;
+    position: relative;
+    padding: 70px 0;
+    margin: 0 auto; }
+    #visual .inner::after {
+      content: '';
+      display: block;
+      clear: both; }
+    #visual .inner .visual {
+      width: 55%;
+      margin-right: 2%;
+      float: left; }
+      #visual .inner .visual #mainTit {
+        width: 100%;
+        position: absolute; }
+        #visual .inner .visual #mainTit > li {
+          width: 100%;
+          height: 280px;
+          position: absolute;
+          top: 0;
+          left: 0;
+          opacity: 0; }
+          #visual .inner .visual #mainTit > li h1 {
+            font: 90px/1 "Roboto";
+            color: #111;
+            opacity: 0;
+            transform: translateY(-10px);
+            transition: 0.5s; }
+          #visual .inner .visual #mainTit > li h2 {
+            font: 90px/1 "Roboto";
+            color: #111;
+            margin-bottom: 20px;
+            opacity: 0;
+            transform: translateY(-5px);
+            transition: 0.5s 0.2s; }
+          #visual .inner .visual #mainTit > li > p {
+            font: 24px/1 "Roboto";
+            color: #333;
+            margin-left: 60px;
+            position: relative;
+            transition: 0.5s 0.2s;
+            opacity: 0; }
+            #visual .inner .visual #mainTit > li > p::before {
+              content: '';
+              display: block;
+              width: 0px;
+              height: 1px;
+              transition: 0.5s;
+              background: #999;
+              position: absolute;
+              top: 50%;
+              left: -60px; }
+          #visual .inner .visual #mainTit > li.on {
+            opacity: 1; }
+            #visual .inner .visual #mainTit > li.on h1 {
+              opacity: 1;
+              transform: translateY(0px); }
+            #visual .inner .visual #mainTit > li.on h2 {
+              opacity: 1;
+              transform: translateY(0px); }
+            #visual .inner .visual #mainTit > li.on > p {
+              margin-left: 60px;
+              opacity: 1; }
+              #visual .inner .visual #mainTit > li.on > p::before {
+                width: 40px; }
+          #visual .inner .visual #mainTit > li.upper h1 {
+            opacity: 0;
+            transform: translateY(10px); }
+          #visual .inner .visual #mainTit > li.upper h2 {
+            opacity: 0;
+            transform: translateY(5px); }
+          #visual .inner .visual #mainTit > li.upper > p {
+            opacity: 0;
+            transform: translateY(5px); }
+      #visual .inner .visual .subVisual {
+        width: 100%;
+        position: relative;
+        top: 280px; }
+        #visual .inner .visual .subVisual::after {
+          content: '';
+          display: block;
+          clear: both; }
+        #visual .inner .visual .subVisual .left {
+          width: 60%;
+          height: 100%;
+          float: left;
+          padding-top: 270px; }
+          #visual .inner .visual .subVisual .left .txt {
+            width: 100%;
+            margin-bottom: 20px; }
+            #visual .inner .visual .subVisual .left .txt p {
+              font: 14px/1 "Roboto";
+              color: #555; }
+            #visual .inner .visual .subVisual .left .txt span {
+              font: 12px/1 "Noto Sans", "Noto Sans KR";
+              color: #999; }
+        #visual .inner .visual .subVisual .right {
+          width: 40%;
+          height: 100%;
+          float: right;
+          position: relative; }
+          #visual .inner .visual .subVisual .right .line {
+            width: 1px;
+            height: 380px;
+            background: #ddd;
+            position: absolute;
+            margin-top: 50px; }
+          #visual .inner .visual .subVisual .right .smallVisual {
+            width: 100%;
+            height: 100%;
+            position: absolute; }
+            #visual .inner .visual .subVisual .right .smallVisual li {
+              width: 100%;
+              height: 100%;
+              position: absolute;
+              top: 0;
+              left: 0;
+              opacity: 0;
+              padding: 0 20px;
+              transition: 0.5s; }
+              #visual .inner .visual .subVisual .right .smallVisual li .pic {
+                width: 100%;
+                height: 160px;
+                margin-bottom: 20px;
+                margin-top: 50px; }
+                #visual .inner .visual .subVisual .right .smallVisual li .pic img {
+                  width: 100%;
+                  height: 100%;
+                  object-fit: cover; }
+              #visual .inner .visual .subVisual .right .smallVisual li h4 {
+                font: 700 16px/1 "Noto Sans", "Noto Sans KR";
+                color: #333;
+                margin-bottom: 10px; }
+              #visual .inner .visual .subVisual .right .smallVisual li p {
+                font: 14px/1.5 "Noto Sans", "Noto Sans KR";
+                color: #666; }
+              #visual .inner .visual .subVisual .right .smallVisual li.on {
+                opacity: 1;
+                transform: translateY(0px); }
+              #visual .inner .visual .subVisual .right .smallVisual li.upper {
+                opacity: 0;
+                transform: translateY(10px); }
+    #visual .inner .visual2 {
+      width: 43%;
+      height: 100%;
+      float: left;
+      position: relative;
+      overflow: hidden; }
+      #visual .inner .visual2 .mainVisual {
+        width: 100%;
+        height: 100%; }
+        #visual .inner .visual2 .mainVisual li {
+          width: 100%;
+          height: 100%;
+          position: absolute;
+          top: 0;
+          left: 0;
+          transition: 1s; }
+          #visual .inner .visual2 .mainVisual li img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; }
+      #visual .inner .visual2 .top {
+        z-index: 2; }
+        #visual .inner .visual2 .top li {
+          clip-path: inset(0 100% 50% 0); }
+          #visual .inner .visual2 .top li.on {
+            clip-path: inset(0 0 50% 0); }
+          #visual .inner .visual2 .top li.upper {
+            clip-path: inset(0 0 50% 100%); }
+      #visual .inner .visual2 .bottom {
+        z-index: 1; }
+        #visual .inner .visual2 .bottom li {
+          clip-path: inset(0 100% 0 0); }
+          #visual .inner .visual2 .bottom li.on {
+            clip-path: inset(0 0 0 0); }
+          #visual .inner .visual2 .bottom li.upper {
+            clip-path: inset(0 0 0 100%); }
+    #visual .inner .prev {
+      display: block;
+      width: 20px;
+      height: 20px;
+      float: left;
+      transition: 0.5s;
+      position: absolute;
+      left: 0px;
+      bottom: 70px; }
+      #visual .inner .prev::before {
+        display: block;
+        content: '';
+        width: 100%;
+        height: 1px;
+        background: #333;
+        position: absolute;
+        top: 0;
+        left: 0;
+        transform-origin: center center;
+        transform: rotate(-180deg);
+        transition: 0.5s; }
+      #visual .inner .prev span {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        opacity: 1;
+        transition: 0.5s;
+        font: 12px/1 "Noto Sans", "Noto Sans KR";
+        color: #666; }
+      #visual .inner .prev::after {
+        display: block;
+        content: '';
+        width: 100%;
+        height: 1px;
+        background: #333;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        transform-origin: center center;
+        transform: rotate(180deg);
+        transition: 0.5s; }
+      #visual .inner .prev:hover {
+        border: none; }
+        #visual .inner .prev:hover::before {
+          top: 50%;
+          transform-origin: left center;
+          transform: rotate(-30deg); }
+        #visual .inner .prev:hover span {
+          opacity: 0;
+          transform: translate(-100%, -50%); }
+        #visual .inner .prev:hover::after {
+          top: 50%;
+          transform-origin: left center;
+          transform: rotate(30deg); }
+      #visual .inner .prev.on {
+        opacity: 1;
+        transform: translateX(0px); }
+    #visual .inner .next {
+      display: block;
+      width: 20px;
+      height: 20px;
+      transition: 0.5s;
+      float: left;
+      position: absolute;
+      left: 80px;
+      bottom: 70px; }
+      #visual .inner .next::before {
+        display: block;
+        content: '';
+        width: 100%;
+        height: 1px;
+        background: #333;
+        transform-origin: center center;
+        position: absolute;
+        top: 0;
+        left: 0;
+        transform: rotate(180deg);
+        transition: 0.5s; }
+      #visual .inner .next span {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        opacity: 1;
+        transition: 0.5s;
+        font: 12px/1 "Noto Sans", "Noto Sans KR";
+        color: #666; }
+      #visual .inner .next::after {
+        display: block;
+        content: '';
+        width: 100%;
+        height: 1px;
+        background: #333;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        transform-origin: center center;
+        transform: rotate(-180deg);
+        transition: 0.5s; }
+      #visual .inner .next:hover {
+        border: none; }
+        #visual .inner .next:hover::before {
+          top: 50%;
+          transform-origin: right center;
+          transform: rotate(30deg); }
+        #visual .inner .next:hover span {
+          opacity: 0;
+          transform: translate(100%, -50%); }
+        #visual .inner .next:hover::after {
+          top: 50%;
+          transform: rotate(-30deg);
+          transform-origin: right center; }
+      #visual .inner .next.on {
+        opacity: 1;
+        transform: translateX(0px); }
+
+/*# sourceMappingURL=style.css.map */
