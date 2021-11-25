@@ -47,17 +47,18 @@ function nextSlide(nextIndex){
         //두번째slide(핑크) top나오고 첫번째bottom upper사라짐
         setTimeout(function(){
             mainVisual_top.find("li").eq(nextIndex).addClass("on");
-            mainVisual_bottom.find("li.upper").removeClass("upper");
-            console.log(nextIndex);
+            mainVisual_bottom.eq(nextIndex-1).find("li.upper").removeClass("upper");
+            console.log(nextIndex-1);
         },speed*2)
 
         ///두번째slide(핑크) bottom나오고 첫번째top upper사라짐
         setTimeout(function(){
             mainVisual_bottom.find("li").eq(nextIndex).addClass("on");
-            currentInedx = nextIndex;
+            
         },speed*2.5)
         setTimeout(function(){
-            mainVisual_top.find("li.upper").removeClass("upper");
+            mainVisual_top.eq(nextIndex-1).find("li.upper").removeClass("upper");
+            currentInedx = nextIndex;
             enableClick = true;
         },speed*3)
         
@@ -71,14 +72,21 @@ function nextSlide(nextIndex){
 
         setTimeout(function(){
             mainVisual_top.find("li").eq(nextIndex).addClass("on");
+            mainVisual_bottom.find("li.upper").removeClass("upper");
             console.log(nextIndex);
         },speed*2)
 
         setTimeout(function(){
             mainVisual_bottom.find("li").eq(nextIndex).addClass("on");
-            enableClick = true;
+            mainVisual_bottom.find("li.upper").removeClass("upper");
         },speed*2.5)
-        
+
+        setTimeout(function(){
+            
+            mainVisual_top.find("li.upper").removeClass("upper");
+            enableClick = true;
+        },speed*3)
+
     }
 }
 
