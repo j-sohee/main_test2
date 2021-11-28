@@ -12,8 +12,8 @@ let speed = 500;
 let enableClick = true;
 
 
-slidingTxt(".tit1", 500, 0);
-slidingTxt(".tit2", 1000, 200);
+slidingTxt(".tit1", 500, 0, 0);
+slidingTxt(".tit2", 800, 200, 0);
 
 next.on("click", function(e){
     e.preventDefault();
@@ -25,9 +25,9 @@ next.on("click", function(e){
         let nextIndex = (currentInedx +1) % sliderCount;
         nextSlide(nextIndex);
         nextVisual(nextIndex);
+        slidingTxt(".tit1", 500, 0,nextIndex);
+        slidingTxt(".tit2", 800, 200,nextIndex);
     }
-
-    
 });
 
 
@@ -45,7 +45,12 @@ prev.on("click", function(e){
 
 });
 
-function slidingTxt(el,speed,delay){
+function slidingTxt(el,speed,delay,nextIndex){
+
+
+    mainTit.find("li.on").removeClass("on");
+    mainTit.find("li").eq(nextIndex).addClass("on");
+
     let bgColor = $(el).children("span").css("color");
     $(el).append(
         $("<em class='mask'>")

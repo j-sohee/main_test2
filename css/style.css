@@ -173,9 +173,9 @@ fieldset {
           position: absolute;
           top: 0;
           left: 0;
-          display: none; }
+          opacity: 0; }
           #visual .inner .visual #mainTit > li.on {
-            display: block; }
+            opacity: 1; }
           #visual .inner .visual #mainTit > li h1 {
             display: inline-block;
             position: relative;
