@@ -149,8 +149,7 @@ fieldset {
 #visual {
   width: 100%;
   height: calc(100vh - 136px);
-  position: relative;
-  background: #fff; }
+  position: relative; }
   #visual .inner {
     width: 1180px;
     height: 100%;
@@ -167,66 +166,35 @@ fieldset {
       float: left; }
       #visual .inner .visual #mainTit {
         width: 100%;
-        position: absolute; }
+        position: relative; }
         #visual .inner .visual #mainTit > li {
           width: 100%;
           height: 280px;
           position: absolute;
           top: 0;
           left: 0;
-          opacity: 0; }
-          #visual .inner .visual #mainTit > li h1 {
-            font: 90px/1 "Roboto";
-            color: #111;
-            opacity: 0;
-            transform: translateY(-10px);
-            transition: 0.5s; }
-          #visual .inner .visual #mainTit > li h2 {
-            font: 90px/1 "Roboto";
-            color: #111;
-            margin-bottom: 20px;
-            opacity: 0;
-            transform: translateY(-5px);
-            transition: 0.5s 0.2s; }
-          #visual .inner .visual #mainTit > li > p {
-            font: 24px/1 "Roboto";
-            color: #333;
-            margin-left: 60px;
-            position: relative;
-            transition: 0.5s 0.2s;
-            opacity: 0; }
-            #visual .inner .visual #mainTit > li > p::before {
-              content: '';
-              display: block;
-              width: 0px;
-              height: 1px;
-              transition: 0.5s;
-              background: #999;
-              position: absolute;
-              top: 50%;
-              left: -60px; }
+          display: none; }
           #visual .inner .visual #mainTit > li.on {
-            opacity: 1; }
-            #visual .inner .visual #mainTit > li.on h1 {
-              opacity: 1;
-              transform: translateY(0px); }
-            #visual .inner .visual #mainTit > li.on h2 {
-              opacity: 1;
-              transform: translateY(0px); }
-            #visual .inner .visual #mainTit > li.on > p {
-              margin-left: 60px;
-              opacity: 1; }
-              #visual .inner .visual #mainTit > li.on > p::before {
-                width: 40px; }
-          #visual .inner .visual #mainTit > li.upper h1 {
-            opacity: 0;
-            transform: translateY(10px); }
-          #visual .inner .visual #mainTit > li.upper h2 {
-            opacity: 0;
-            transform: translateY(5px); }
-          #visual .inner .visual #mainTit > li.upper > p {
-            opacity: 0;
-            transform: translateY(5px); }
+            display: block; }
+          #visual .inner .visual #mainTit > li h1 {
+            display: inline-block;
+            position: relative;
+            overflow: hidden; }
+            #visual .inner .visual #mainTit > li h1 span {
+              font: 90px/1 "Roboto";
+              color: #111;
+              opacity: 0; }
+          #visual .inner .visual #mainTit > li h2 {
+            display: inline-block;
+            position: relative;
+            overflow: hidden;
+            margin-bottom: 20px; }
+            #visual .inner .visual #mainTit > li h2 span {
+              font: 90px/1.2 "Roboto";
+              color: #111;
+              opacity: 0; }
+          #visual .inner .visual #mainTit > li.tit1, #visual .inner .visual #mainTit > li.tit2 {
+            color: #000; }
       #visual .inner .visual .subVisual {
         width: 100%;
         position: relative;

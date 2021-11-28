@@ -11,6 +11,10 @@ let sliderCount = mainVisual_top.find("li").length;
 let speed = 500;
 let enableClick = true;
 
+
+slidingTxt(".tit1", 500, 0);
+slidingTxt(".tit2", 1000, 200);
+
 next.on("click", function(e){
     e.preventDefault();
 
@@ -22,6 +26,8 @@ next.on("click", function(e){
         nextSlide(nextIndex);
         nextVisual(nextIndex);
     }
+
+    
 });
 
 
@@ -38,6 +44,29 @@ prev.on("click", function(e){
     }
 
 });
+
+function slidingTxt(el,speed,delay){
+    let bgColor = $(el).children("span").css("color");
+    $(el).append(
+        $("<em class='mask'>")
+            .css({
+                display: "block",
+                width: "100%",
+                height: "100%",
+                backgroundColor : bgColor,
+                position : "absolute",
+                top:0,
+                left:"-100%"
+            })
+    )
+
+    $(el).find(".mask").stop().delay(delay).animate({ left:0 }, speed, "easeInExpo", function(){
+        $(this).prev("span").css({ opacity : 1});
+        $(this).animate({ left : "100%"}, speed, "easeInExpo", function(){
+            $(this).remove();
+        })
+    })
+}
 
 function nextSlide(nextIndex){
     if(currentInedx < nextIndex){
@@ -134,34 +163,25 @@ function prevSlide(prevIndex){
 
 function nextVisual(nextIndex){
     if(currentInedx < nextIndex){
-        mainTit.find("li.on").addClass("upper");
         smallVisual.find("li.on").addClass("upper");
 
         setTimeout(function(){
-            mainTit.find("li").removeClass("upper");
-            mainTit.find("li").removeClass("on");
             smallVisual.find("li").removeClass("upper");
             smallVisual.find("li").removeClass("on");
 
-            mainTit.find("li").eq(nextIndex).addClass("on");
             smallVisual.find("li").eq(nextIndex).addClass("on");
             currentInedx = nextIndex;
-            console.log(currentInedx);
         },speed)
         enableClick = true;
         
         
     }else{
         currentInedx=0;
-        mainTit.find("li.on").addClass("upper");
         smallVisual.find("li.on").addClass("upper");
         setTimeout(function(){
-            mainTit.find("li").removeClass("upper");
-            mainTit.find("li").removeClass("on");
             smallVisual.find("li").removeClass("upper");
             smallVisual.find("li").removeClass("on");
             
-            mainTit.find("li").eq(nextIndex).addClass("on");
             smallVisual.find("li").eq(nextIndex).addClass("on");
         },speed)
         enableClick = true;
@@ -171,16 +191,12 @@ function nextVisual(nextIndex){
 
 function prevVisual(prevIndex){
     if(currentInedx > prevIndex){
-        mainTit.find("li.on").addClass("upper");
         smallVisual.find("li.on").addClass("upper");
 
         setTimeout(function(){
-            mainTit.find("li").removeClass("upper");
-            mainTit.find("li").removeClass("on");
             smallVisual.find("li").removeClass("upper");
             smallVisual.find("li").removeClass("on");
 
-            mainTit.find("li").eq(prevIndex).addClass("on");
             smallVisual.find("li").eq(prevIndex).addClass("on");
 
             currentInedx = prevIndex;
@@ -189,10 +205,8 @@ function prevVisual(prevIndex){
 
     }else{
         currentInedx=0;
-        mainTit.find("li.on").addClass("upper");
         smallVisual.find("li.on").addClass("upper");
         setTimeout(function(){
-            mainTit.find("li").eq(prevIndex).addClass("on");
             smallVisual.find("li").eq(prevIndex).addClass("on");
         },speed)
         enableClick = true;
